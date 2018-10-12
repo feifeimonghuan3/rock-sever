@@ -165,6 +165,9 @@ router.post('/deleteCommunity', function(req, res, next) {
 
 router.get('/getCommunity', function(req, res, next) {
     pool.getConnection(function(err, connection) {
+        if(err) {
+            console.log(err);
+        }
         var param = req.query || req.params;
         connection.query(sentence.getCommunity, [], function (err, result){
             if (result.length === 0) {
