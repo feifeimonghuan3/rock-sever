@@ -24,6 +24,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 app.use(express.static('public'));
+app.listen(30001, function() {
+  console.log('listening on port 30001');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
